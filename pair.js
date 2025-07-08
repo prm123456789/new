@@ -35,8 +35,13 @@ router.get('/', async (req, res) => {
       res.send({ code });
 
       sock.ev.on('creds.update', saveCreds);
+
       sock.ev.on('connection.update', async ({ connection }) => {
         if (connection === 'open') {
+          console.log(`✅ Session ${id} connectée avec succès (pairing).`);
+          await saveCreds();
+          sock.sendMessage(sock.user.id, { text: '🤖 INCONNU-XD connecté avec succès !' });
+
           await delay(2000);
           await sock.ws.close();
           await startSock(id);
