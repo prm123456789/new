@@ -1,0 +1,18 @@
+{
+  "name": "inconnu-xd-multi",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp multi-session - INCONNU XD V2",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "pm2 start index.js --name inconnu-xd",
+    "stop": "pm2 stop inconnu-xd",
+    "restart": "pm2 restart inconnu-xd"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "npm:baileys-pro@0.0.5",
+    "express": "^4.18.2",
+    "pino": "^8.14.2",
+    "path": "^0.12.7"
+  }
+}
