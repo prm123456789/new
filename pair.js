@@ -1,11 +1,10 @@
-// pair.js
 import express from 'express';
 import { makeid } from './inconnu/handler/gen-id.js';
 import { useMultiFileAuthState, makeWASocket, makeCacheableSignalKeyStore, Browsers, delay } from '@whiskeysockets/baileys';
 import fs from 'fs';
 import pino from 'pino';
 import path from 'path';
-import { startSock } from './index.js';
+import { startSock } from './startSock.js';
 
 const router = express.Router();
 
