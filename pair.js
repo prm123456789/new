@@ -1,3 +1,4 @@
+// pair.js
 import express from 'express';
 import { makeid } from './inconnu/handler/gen-id.js';
 import { useMultiFileAuthState, makeWASocket, makeCacheableSignalKeyStore, Browsers, delay } from '@whiskeysockets/baileys';
@@ -35,7 +36,6 @@ router.get('/', async (req, res) => {
       res.send({ code });
 
       sock.ev.on('creds.update', saveCreds);
-
       sock.ev.on('connection.update', async ({ connection }) => {
         if (connection === 'open') {
           await delay(2000);
